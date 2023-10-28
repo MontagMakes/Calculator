@@ -24,7 +24,8 @@ body{
 .displayScreen{
     margin-bottom: 8px;
     height: 15%;
-    background-color: rgb(163, 163, 163);
+    background-color: #42474a;
+    
 }
 
 .displayText{
