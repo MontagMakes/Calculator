@@ -28,7 +28,7 @@ body{
 }
 
 .displayText{
-    direction: rtl;
+    text-align: right;
     margin: 0;
     margin-right: 10px;
     font-size: 80px;

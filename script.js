@@ -38,7 +38,7 @@ function displayText(square, i){
             if(num1 == null && num2 == null && operator == null){
                 console.log(isNumFirst)
                 if(isNumFirst){
-                    display.textContent = btnArray[i];
+                    display.textContent = Number(btnArray[i]);
                     num1 = display.textContent;
                     isNumFirst = false;
                 } else if (!isNumFirst) {
@@ -116,12 +116,7 @@ function displayText(square, i){
     if(square.textContent == "="){
         square.addEventListener("click", ()=>{
             let result = operate(num1, operator, num2);
-            if(String(result).includes("-")){
-                display.textContent = String(result).substring(1,result.length) + "-"
-
-            }else {
-                display.textContent = result;
-            }
+            
             console.log(String(result).includes("-"))
             display.textContent = result;
             
@@ -178,34 +173,32 @@ function displayText(square, i){
 
         })
     }
-    //+/- button
+    
+    // +/- button
     if(square.textContent == "+/-"){
         square.addEventListener("click", ()=>{
-            if(!display.textContent.includes("-")){
-
-                display.textContent = "-" + display.textContent
-            } else if (display.textContent.includes("-")){
-                display.textContent = display.textContent.substring(1, display.textContent.length)
+            display.textContent = -display.textContent;
+            if(num1 != null && num2 == null){
+                num1 = display.textContent;
+            } else if (num1 != null && num2 != null){
+                num2 = display.textContent;
             }
-            
+            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
+        })
+    }
+
+    // . button
+    if(square.textContent == "."){
+        square.addEventListener("click", ()=>{
+            display.textContent = display.textContent + ".";
         })
     }
 }
 
 function operate(num1, operator, num2){
     if(operator == "+"){
-        result = add(num1, num2)
-        
-        if(String(result).includes("-")){
-            
-            result =  String(result).substring(0, result.length-1);
-            return result 
-        }else {
-            console.log(result)
-            return result
-        }
-        
-        
+        return add(num1, num2)
+
     } else if (operator == "-"){
         
         return subtract(num1, num2);
