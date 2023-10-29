@@ -29,6 +29,7 @@ function createButtons(){
 }
 
 function displayText(square, i){
+
     //display numbers
     if(square.textContent >= 0 && square.textContent <= 9){
         square.addEventListener("click", ()=>{
@@ -38,24 +39,37 @@ function displayText(square, i){
                     display.textContent = btnArray[i];
                     num1 = display.textContent;
                     isNumFirst = false;
-                } else {
+                } else if (!isNumFirst) {
                     display.textContent += btnArray[i];
                     num1 = display.textContent;
                 }
+                console.log(`num1: ${num1} num2: ${num2} operator: ${operator} isNumFirst: ${isNumFirst}`)
 
-            } else if(num1 != null && operator != null && num2 == null) {
+            } else if(num1 != null && operator != null) {
                 if(isNumFirst){
                     display.textContent = btnArray[i];
                     num2 = display.textContent;
                     isNumFirst = false;
-                } else {
+                } else if (!isNumFirst){
                     display.textContent += btnArray[i];
                     num2 = display.textContent;
                 }
-            }
+                console.log(`num1: ${num1} num2: ${num2} operator: ${operator} isNumFirst: ${isNumFirst}`)
+            } else {
+                if(isNumFirst){
+                    display.textContent = btnArray[i];
+                    num1 = display.textContent;
+                    isNumFirst = false;
+                } else {
+                    display.textContent += btnArray[i];
+                    num1 = display.textContent;
+                }
+                console.log(`num1: ${num1} num2: ${num2} operator: ${operator} isNumFirst: ${isNumFirst}`)
+            } 
         })
     }
 
+    //Operators
     if(square.textContent == "+" || square.textContent == "-" ||
        square.textContent == "*" || square.textContent == "/"){
         square.addEventListener("click", ()=>{
@@ -83,15 +97,17 @@ function displayText(square, i){
     if(square.textContent == "="){
         square.addEventListener("click", ()=>{
             display.textContent = operate(num1, operator, num2);
-            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator}`)
+            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
             
             num1 = display.textContent;
             num2 = null;
             operator = null;
+            isNumFirst = true;
             
         })
     }
 
+    //clear
     if(square.textContent == "AC"){
         square.addEventListener("click", ()=>{
             display.textContent = 0;
@@ -101,6 +117,15 @@ function displayText(square, i){
             isNumFirst = true;
         })
     }
+    if(square.textContent == "del"){
+        square.addEventListener("click", ()=>{
+            let charDel = display.textContent.charAt(display.textContent.length-1);
+            display.textContent.replace(charDel, "1")
+            console.log(display.textContent.charAt(display.textContent.length-1))
+            
+        })
+    }
+
 }
 
 function operate(num1, operator, num2){
