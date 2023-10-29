@@ -14,6 +14,7 @@ createButtons();
 function createButtons(){
     for(let i=0;i<20;i++){
         const square = document.createElement("div");
+        square.className = `btn${btnArray[i]}`;
         square.setAttribute("style", "display: flex;\
                             justify-content: center; align-items: center; \
                             background-color: hsl(182,59%,25%); \
@@ -22,6 +23,7 @@ function createButtons(){
         square.textContent = btnArray[i];
         square.addEventListener("mousedown", ()=>square.style.backgroundColor = "hsl(182,59%,30%)");
         square.addEventListener("mouseup", ()=>square.style.backgroundColor = "hsl(182,59%,25%)");
+        
         displayText(square, i);
         
         btnContainer.appendChild(square);
