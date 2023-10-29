@@ -65,7 +65,22 @@ function displayText(square, i){
                     num1 = display.textContent;
                 }
                 console.log(`num1: ${num1} num2: ${num2} operator: ${operator} isNumFirst: ${isNumFirst}`)
-            } 
+            }
+            
+            if(display.textContent == 0){
+                display.textContent = 0;
+                isNumFirst = true;
+            }
+        })
+    }
+
+    //0 button
+    if(square.textContent == 0){
+        square.addEventListener("click", ()=>{
+            if(display.textContent == 0){
+                display.textContent = 0;
+                isNumFirst = true;
+            }
         })
     }
 
@@ -90,6 +105,7 @@ function displayText(square, i){
             } else if (num1 != null && num2 == null && operator != null){
                 operator = square.textContent;
             }
+            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
 
         })
     }
@@ -97,13 +113,12 @@ function displayText(square, i){
     if(square.textContent == "="){
         square.addEventListener("click", ()=>{
             display.textContent = operate(num1, operator, num2);
-            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
             
             num1 = display.textContent;
             num2 = null;
             operator = null;
             isNumFirst = true;
-            
+            console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
         })
     }
 
@@ -117,15 +132,25 @@ function displayText(square, i){
             isNumFirst = true;
         })
     }
+    
     if(square.textContent == "del"){
         square.addEventListener("click", ()=>{
-            let charDel = display.textContent.charAt(display.textContent.length-1);
-            display.textContent.replace(charDel, "1")
-            console.log(display.textContent.charAt(display.textContent.length-1))
-            
+            console.log(display.textContent.length);
+
+            if(num1 != null){
+                if(display.textContent.length > 1){
+                    display.textContent = display.textContent.substring(0, display.textContent.length-1)
+                    num1 = display.textContent;
+                } else {
+                    display.textContent = 0;
+                    num1 = 0;
+                    isNumFirst = true;
+                }
+                console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator} isNumFirst: ${isNumFirst}`)
+
+            }
         })
     }
-
 }
 
 function operate(num1, operator, num2){
