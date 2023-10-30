@@ -4,9 +4,10 @@ body{
     background-color: #003c3c;
     
     align-items: center;
-    height: 100%;
+    height: 100vh;
     padding: 0px;
     gap: 30px;
+    margin: 0px
 }
 
 .calculatorContainer{
