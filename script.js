@@ -1,7 +1,7 @@
 const display = document.querySelector(".displayText")
 const btnContainer = document.querySelector(".buttonContainer");
-const btnArray = ["AC", "+/-", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 
-                1, 2, 3, "+", "del", 0, ".", "=" ]
+const btnArray = ["AC", "del", "%", "/", 7, 8, 9, "*", 4, 5, 6, "-", 
+                1, 2, 3, "+", "+/-", 0, ".", "=" ]
 const operators = ["/", "*", "-", "+"]
 
 let num1 = null;
