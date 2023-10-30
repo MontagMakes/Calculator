@@ -14,15 +14,16 @@ createButtons();
 function createButtons(){
     for(let i=0;i<20;i++){
         const square = document.createElement("div");
-        square.className = `btn${btnArray[i]}`;
+        square.className = `btn ${btnArray[i]}`;
         square.setAttribute("style", "display: flex;\
                             justify-content: center; align-items: center; \
-                            background-color: hsl(182,59%,25%); \
-                            height: 100.4px; width: 125px; \
-                            font-size: 30px; color: white;");
+                            background-color: #494f52; \
+                            height: 95px; width: 95px; \
+                            font-size: 30px; color: white;\
+                            border-radius: 150px; box-shadow: 5px 5px 8px black");
         square.textContent = btnArray[i];
-        square.addEventListener("mousedown", ()=>square.style.backgroundColor = "hsl(182,59%,30%)");
-        square.addEventListener("mouseup", ()=>square.style.backgroundColor = "hsl(182,59%,25%)");
+        square.addEventListener("mousedown", ()=>square.style.backgroundColor = "hsl(200,6%,23%)");
+        square.addEventListener("mouseup", ()=>square.style.backgroundColor = "#494f52");
         
         displayText(square, i);
         
