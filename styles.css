@@ -2,9 +2,11 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #003c3c;
-    justify-content: space-around;
+    
     align-items: center;
-    height: 100vh; 
+    height: 100%;
+    padding: 0px;
+    gap: 30px;
 }
 
 .calculatorContainer{

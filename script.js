@@ -22,8 +22,8 @@ function createButtons(){
                             font-size: 30px; color: white;\
                             border-radius: 150px; box-shadow: 5px 5px 8px black");
         square.textContent = btnArray[i];
-        square.addEventListener("mousedown", ()=>square.style.backgroundColor = "hsl(200,6%,23%)");
-        square.addEventListener("mouseup", ()=>square.style.backgroundColor = "#494f52");
+        square.addEventListener("mouseenter", ()=>square.style.backgroundColor = "hsl(200,6%,23%)");
+        square.addEventListener("mouseleave", ()=>square.style.backgroundColor = "#494f52");
         
         displayText(square, i);
         
