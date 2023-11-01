@@ -3,7 +3,7 @@
 
 This is a simple calculator website project built with HTML, CSS, and JavaScript. It provides basic calculator functionality to perform arithmetic operations.
 
-![Calculator Website](screenshot.png)
+![Calculator Website]([screenshot.png](https://solitaryxero.github.io/Calculator/))
 
 ## Features
 
@@ -37,32 +37,8 @@ calculator-website/
 ├── index.html
 ├── styles.css
 ├── script.js
-├── screenshot.png
 └── README.md
 ```
 
-## Installation
 
-To run this project locally, you don't need any additional dependencies. Simply open the `index.html` file in your web browser.
 
-## Contributing
-
-If you'd like to contribute to this project, feel free to open issues or submit pull requests on the [GitHub repository](#).
-
-## License
-
-This project is licensed under the [Insert License Name] License. See the [LICENSE.md](LICENSE.md) file for details.
-
-## Author
-
-- [Your Name]
-- Email: [Your Email]
-- GitHub: [Your GitHub Profile]
-
-## Screenshot
-
-![Calculator Website](screenshot.png)
-
-[Optional: Include a screenshot of your calculator website.]
-
-Feel free to customize this `README.md` to match the specifics of your Calculator website project, and provide accurate information about your project, its features, usage, and other relevant details.
