@@ -9,6 +9,8 @@ let num2 = null;
 let operator = null;
 let isNumFirst = true;
 
+let containerSize = btnContainer.clientHeight;
+console.log(containerSize);
 createButtons();
 
 //create Buttons
@@ -31,7 +33,7 @@ function btnStyle(btn){
     btn.setAttribute("style", "display: flex;\
         justify-content: center; align-items: center; \
         background-color: #494f52; \
-        height: 95px; width: 95px; \
+        height: 16.6%; width: 22%; \
         font-size: 30px; color: white;\
         border-radius: 150px; box-shadow: 5px 5px 8px black");
 }
