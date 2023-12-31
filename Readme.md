@@ -5,6 +5,9 @@ This is a simple calculator website project built with HTML, CSS, and JavaScript
 
 ![Calculator Website]([screenshot.png](https://solitaryxero.github.io/Calculator/))
 
+![image](https://github.com/MontagMakes/Calculator/assets/103876121/cac08b1c-ad02-470d-b270-0b2c925b29ad)
+
+
 ## Features
 
 - Perform addition, subtraction, multiplication, and division operations.
